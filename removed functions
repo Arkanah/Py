@@ -1,8 +1,0 @@
-def add_to_startup(lista_file_aprire,nome_file):
-    username=getpass.getuser()
-    bat_path = f"C:\\Users\\{username}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\{nome_file}"
-    with open(bat_path,"w") as bat_file:
-        bat_file.write(f'@ECHO OFF \n>NUL 2>&1')
-    with open(bat_path, "a") as bat_file:
-        for percorso in lista_file_aprire:
-            bat_file.write(f'\nstart {percorso}')
